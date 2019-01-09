@@ -1,5 +1,15 @@
-const path = "other";
+const button = document.createElement("button");
+const [a, b] = 1;
+console.log(a, b);
 
-const sum = require("./" + path + ".js");
+button.innerText = "Click";
 
-sum(9, 4);
+button.onclick = () => {
+    System.import("./image_helper.js")
+        .then(module => {
+            console.log(module);
+            module.default();
+        })
+};
+
+document.body.appendChild(button);
